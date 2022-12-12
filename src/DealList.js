@@ -41,7 +41,7 @@ export class DealList extends Component {
     render() {
         return (
             <form onSubmit={this.formSubmit}>
-                <div>
+                <div className='parent' >
                     <input type='text' placeholder='Что планируете сделать?' 
                     onChange={(e) => {this.userText (e.target.value)}} value={this.state.inputUser}                        />
                 </div>
