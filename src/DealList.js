@@ -40,29 +40,25 @@ export class DealList extends Component {
 
     render() {
         return (
-            <div className='parent'>
-                <form onSubmit={this.formSubmit}>
-                    <div>
-                        <input type='text' placeholder='Что планируете сделать?' 
-                        onChange={(e) => {this.userText (e.target.value)}} value={this.state.inputUser}
-                        />
-                    </div>
-                    <div className='parent'>
-                        <button className="btn btn-add" onClick={() => this.addItem(this.state.inputUser)}>ДОБАВИТЬ</button>
-                    </div>
+            <form onSubmit={this.formSubmit}>
+                <div>
+                    <input type='text' placeholder='Что планируете сделать?' 
+                    onChange={(e) => {this.userText (e.target.value)}} value={this.state.inputUser}                        />
+                </div>
+                <div className='parent'>
+                    <button className="btn btn-add" onClick={() => this.addItem(this.state.inputUser)}>ДОБАВИТЬ</button>
+                </div>
 
-                    <div>
-                        <ul>
-                            {this.state.toDoArray.map((item, index) => (<li onClick={this.crossed} key={index}><img className="ico" src={icon} width='40px' alt='ico'/>{item}</li>))} 
-                        </ul>
-                    </div>
+                <div>
+                    <ul>
+                        {this.state.toDoArray.map((item, index) => (<li onClick={this.crossed} key={index}><img className="ico" src={icon} width='40px' alt='ico'/>{item}</li>))} 
+                    </ul>
+                </div>
 
-                    <div className='parent'>
-                        <button className="btn btn-del" onClick={() => this.deleteItem(this.state.inputUser)}>УДАЛИТЬ</button>
-                    </div>
-                </form>
-            </div>
-
-        )
+                <div className='parent'>
+                    <button className="btn btn-del" onClick={() => this.deleteItem(this.state.inputUser)}>УДАЛИТЬ</button>
+                </div>
+            </form>
+            )
+        }
     }
-}
